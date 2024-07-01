@@ -1,0 +1,27 @@
+version: 2
+
+sources:
+  - name: db_hvob
+    schema: public
+    tables:
+      - name: commodities
+        description: "Tabela que contém dados históricos de commodities"
+        columns:
+          - name: Date
+            description: "Data da observação"
+          - name: Close
+            description: "Preço de fechamento da commodity"
+          - name: Simbolo
+            description: "Símbolo da commodity"
+      
+      - name: movimentacao_commodities
+        description: "Tabela seed que contém informações das commodities"
+        columns:
+          - name: date
+            description: "Data da transação"
+          - name: symbol
+            description: "Símbolo da commodity"
+          - name: action
+            description: "Tipo de transação (buy/sell)"
+          - name: quantity
+            description: "Quantidade transacionada"
