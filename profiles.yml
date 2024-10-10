@@ -1,0 +1,13 @@
+dbt_commodities:
+  outputs:
+    prod:
+      dbname: "{{ env_var('DB_NAME') }}"
+      host: "{{ env_var('DB_HOST') }}"
+      pass: "{{ env_var('DB_PASS') }}"
+      port: "{{ env_var('DB_PORT') | int }}"
+      schema: public
+      threads: 1
+      type: postgres
+      user: "{{ env_var('DB_USER') }}"
+      keepalives_idle: 0
+  target: prod
