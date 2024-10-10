@@ -1,0 +1,14 @@
+version: 2
+
+seeds:
+  - name: movimentacao_commodities
+    description: "Dados de movimentações das commodities."
+    columns:
+      - name: date
+        description: "Data da transação"
+      - name: symbol
+        description: "Símbolo da commodity"
+      - name: action
+        description: "Tipo de transação (buy/sell)"
+      - name: quantity
+        description: "Quantidade transacionada"
