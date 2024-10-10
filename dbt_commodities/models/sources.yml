@@ -1,0 +1,16 @@
+version: 2
+
+sources:
+  - name: commodities_source
+    schema: public
+    description: "Dados de commodities extraídos da API do Yahoo Finance."
+    tables:
+      - name: commodities
+        description: "Dados históricos das commodities."
+        columns:
+          - name: Date
+            description: "Data de observação"
+          - name: Close
+            description: "Preço de fechamento da commodity"
+          - name: Ticker
+            description: "Símbolo da commodity"

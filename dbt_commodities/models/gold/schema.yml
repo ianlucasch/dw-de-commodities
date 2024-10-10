@@ -1,0 +1,20 @@
+version: 2
+
+models:
+  - name: gold_datamart_commodities
+    description: "Datamart para dados de commodities integrados com movimentações."
+    columns:
+      - name: data
+        description: "Data de observação no formato YYYY-MM-DD"
+      - name: ticker
+        description: "Símbolo da commodity"
+      - name: valor_fechamento
+        description: "Preço de fechamento da commodity com precisão decimal 10.2"
+      - name: acao
+        description: "Tipo de transação (buy/sell)"
+      - name: quantidade
+        description: "Quantidade transacionada"
+      - name: valor
+        description: "Valor da transação"
+      - name: ganho
+        description: "Ganho ou perda da transação"

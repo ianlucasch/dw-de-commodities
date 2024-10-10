@@ -1,0 +1,24 @@
+version: 2
+
+models:
+  - name: bronze_commodities
+    description: "Dados históricos das commodities."
+    columns:
+      - name: Date
+        description: "Data de observação"
+      - name: Close
+        description: "Preço de fechamento da commodity"
+      - name: Ticker
+        description: "Símbolo da commodity"
+
+  - name: bronze_movimentacao_commodities
+    description: "Dados de movimentações das commodities."
+    columns:
+      - name: date
+        description: "Data da transação"
+      - name: symbol
+        description: "Símbolo da commodity"
+      - name: action
+        description: "Tipo de transação (buy/sell)"
+      - name: quantity
+        description: "Quantidade transacionada"
