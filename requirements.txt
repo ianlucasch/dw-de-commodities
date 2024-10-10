@@ -1,0 +1,6 @@
+streamlit==1.38.0
+sqlalchemy==2.0.35
+python-dotenv==1.0.1
+psycopg2-binary==2.9.9
+yfinance==0.2.43
+dbt-postgres==1.8.2
