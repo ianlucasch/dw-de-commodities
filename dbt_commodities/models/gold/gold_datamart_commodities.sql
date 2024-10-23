@@ -1,3 +1,5 @@
+{{ config(materialized="view") }}
+
 WITH commodities AS (
     SELECT
         "data",
