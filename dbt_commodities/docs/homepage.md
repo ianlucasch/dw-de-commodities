@@ -95,9 +95,16 @@ Os seeds são dados estáticos que são carregados no Data Warehouse a partir de
    ```
 
 
-5. Configure o DBT:
+5. Crie um novo projeto DBT:
+   ```bash
+   dbt init dbt_commodities
+   cd dbt_commodities
+   ```
 
-   Configure o arquivo `profiles.yml` com suas variáveis de ambiente para se conectar ao seu Data Warehouse. O arquivo deve estar no diretório `~/.dbt/` ou no diretório especificado pela variável de ambiente `DBT_PROFILES_DIR`.
+
+6. Configure a conexão com PostgreSQL:
+
+   Configure o arquivo `profiles.yml` com suas variáveis de ambiente para conectar o DBT ao PostgreSQL. O arquivo deve estar no diretório `~/.dbt/` ou no diretório especificado pela variável de ambiente `DBT_PROFILES_DIR`.
 
    Exemplo de `profiles.yml`:
    ```yaml
@@ -113,12 +120,6 @@ Os seeds são dados estáticos que são carregados no Data Warehouse a partir de
             type: postgres
             user: <DB_USER>
       target: dev
-   ```
-
-
-6. Acesse a pasta do projeto DBT:
-   ```bash
-   cd dbt_commodities
    ```
 
 
