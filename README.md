@@ -10,6 +10,7 @@ Data Warehouse (DW) para armazenar e analisar dados de commodities, utilizando u
 - [Como funciona](#como-funciona)
    - [Estrutura de diretórios](#estrutura-de-diretórios)
 - [Como executar](#como-executar)
+- [Conclusão](#conclusão)
 
 ## Sobre o projeto
 
@@ -82,8 +83,6 @@ O script `dashboard` é responsável por se conectar ao banco de dados PostgreSQ
 
 Todas as etapas foram executadas no terminal `bash`.
 
-### Passos para execução:
-
 1. Clone o repositório localmente:
    ```bash
    git clone https://github.com/ianlucasch/dw-de-commodities.git
@@ -127,9 +126,16 @@ Todas as etapas foram executadas no terminal `bash`.
    ```
 
 
-8. Configure o DBT:
+8. Crie um novo projeto DBT:
+   ```bash
+   dbt init dbt_commodities
+   cd dbt_commodities
+   ```
 
-   Configure o arquivo `profiles.yml` com suas variáveis de ambiente para se conectar ao seu Data Warehouse. O arquivo deve estar no diretório `~/.dbt/` ou no diretório especificado pela variável de ambiente `DBT_PROFILES_DIR`.
+
+9. Configure a conexão com PostgreSQL:
+
+   Configure o arquivo `profiles.yml` com suas variáveis de ambiente para conectar o DBT ao PostgreSQL. O arquivo deve estar no diretório `~/.dbt/` ou no diretório especificado pela variável de ambiente `DBT_PROFILES_DIR`.
 
    Exemplo de `profiles.yml`:
    ```yaml
@@ -145,12 +151,6 @@ Todas as etapas foram executadas no terminal `bash`.
             type: postgres
             user: <DB_USER>
       target: dev
-   ```
-
-
-9. Acesse a pasta do projeto DBT:
-   ```bash
-   cd dbt_commodities
    ```
 
 
@@ -176,3 +176,7 @@ Todas as etapas foram executadas no terminal `bash`.
       ```bash
       streamlit run src/dashboard.py
       ```
+
+## Conclusão
+
+Este README apresenta o passo a passo e as principais ferramentas utilizadas para a criação de um Data Warehouse de Commodities e transformação dos seus dados.
