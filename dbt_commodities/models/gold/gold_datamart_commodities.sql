@@ -21,29 +21,29 @@ movimentacao AS (
 
 juncao AS (
     SELECT
-        c.data,
-        c.ticker,
-        c.valor_fechamento,
-        m.acao,
-        m.quantidade,
-        (m.quantidade * c.valor_fechamento) AS "valor",
+        c."data",
+        c."ticker",
+        c."valor_fechamento",
+        m."acao",
+        m."quantidade",
+        (m."quantidade" * c."valor_fechamento") AS "valor",
         CASE
-            WHEN m.acao = 'sell' THEN (m.quantidade * c.valor_fechamento)
-            ELSE - (m.quantidade * c.valor_fechamento)
+            WHEN m."acao" = 'sell' THEN (m."quantidade" * c."valor_fechamento")
+            ELSE - (m."quantidade" * c."valor_fechamento")
         END AS "ganho"
     FROM
         commodities c
     INNER JOIN
         movimentacao m
     ON
-        c.data = m.data
+        c."data" = m."data"
     AND
-        c.ticker = m.ticker
+        c."ticker" = m."ticker"
 ),
 
 ultimo_dia AS (
     SELECT
-        MAX(data) AS "ultima_data"
+        MAX("data") AS "ultima_data"
     FROM
         juncao
 ),
@@ -54,7 +54,7 @@ dados_filtrados AS (
     FROM
         juncao
     WHERE
-        data = (SELECT ultima_data FROM ultimo_dia)
+        data = (SELECT "ultima_data" FROM ultimo_dia)
 )
 
 SELECT
